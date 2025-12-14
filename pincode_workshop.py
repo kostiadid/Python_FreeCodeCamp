@@ -1,8 +1,12 @@
-poem = '''Stars and the moon
+def pin_extractor(poem):
+    secret_code = ''
+    lines = poem.split('\n')
+    for line in lines:
+        print(line)
+
+poem = """Stars and the moon
 shine in the sky
 white and bright
-until the end of the night'''
-def pin_extractor(poem):
-    lines = poem.split('\n')
+until the end of the night"""
 
 pin_extractor(poem)
