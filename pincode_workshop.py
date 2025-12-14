@@ -3,6 +3,6 @@ shine in the sky
 white and bright
 until the end of the night'''
 def pin_extractor(poem):
-    secret_code = ''
+    lines = poem.split('\n')
 
 pin_extractor(poem)
