@@ -1,2 +1,8 @@
+poem = '''Stars and the moon
+shine in the sky
+white and bright
+until the end of the night'''
 def pin_extractor(poem):
-    pass
+    secret_code = ''
+
+pin_extractor(poem)
