@@ -32,6 +32,16 @@ medical_records = [
         'last_visit_id': 'V2304',
     }
 ]
+
+def find_invalid_records(
+    patient_id, age, gender, diagnosis, medications, last_visit_id
+):
+    constraints = {
+        
+    }
+
+    return constraints
+
 def validate(data):
     is_sequence = isinstance(data, (list, tuple))
 
@@ -40,11 +50,25 @@ def validate(data):
         return False
         
     is_invalid = False
-    
+    key_set = set(
+        ['patient_id', 'age', 'gender', 'diagnosis', 'medications', 'last_visit_id']
+    )
+
     for index, dictionary in enumerate(data):
         if not isinstance(dictionary, dict):
             print(f'Invalid format: expected a dictionary at position {index}.')
             is_invalid = True
+
+        if set(dictionary.keys()) != key_set:
+            print(
+                f'Invalid format: {dictionary} at position {index} has missing and/or invalid keys.'
+            )
+            is_invalid = True
+
     if is_invalid:
         return False
-        
+    print('Valid format.')
+    return True
+
+
+validate(medical_records)
