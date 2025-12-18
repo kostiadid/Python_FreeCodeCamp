@@ -20,7 +20,7 @@ class Email:
 
     def __str__(self):
         status = 'Read' if self.read else 'Unread'
-
+        return f"[{status}] From: {self.sender.name} | Subject: {self.subject}"
 class User:
     def __init__(self, name):
         self.name = name
@@ -33,6 +33,17 @@ class User:
 class Inbox:
     def __init__(self):
         self.emails = []
-    
+
     def receive_email(self, email):
         self.emails.append(email)
+
+    def list_emails(self):
+        if not self.emails:
+            print('Your inbox is empty.\n')
+            return
+        print('\nYour Emails:')
+        for i, email in  enumerate(self.emails,start=1):
+            print(f'{i}. {email}')
+            
+            
+        
