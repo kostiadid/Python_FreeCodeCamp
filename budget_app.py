@@ -21,6 +21,13 @@ class Category:
             return True  
         return False
     
+    def transfer(self,amount, reciever):
+        self.withdraw(amount,f'Transfer to {reciever.name}')
+        reciever.deposit(amount,f'Transfer from {self.name}')
+        return True
 
 def create_spend_chart(categories):
     pass
+
+
+    
