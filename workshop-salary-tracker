@@ -20,11 +20,16 @@ class Employee:
 
     def __repr__(self):
         return f"Employee('{self.name}', '{self.level}')"
+
     @property
     def name(self):
         return self._name
-
-    
+    @name.setter
+    def name(self, new_name):
+        if not isinstance(new_name, str):
+            raise TypeError("'name' must be a string.")
+        self._name = new_name
+        
     @property
     def level(self):
         return self._level
@@ -32,7 +37,6 @@ class Employee:
     @property
     def salary(self):
         return self._salary
-
 
 charlie_brown = Employee('Charlie Brown', 'trainee')
 print(charlie_brown)
