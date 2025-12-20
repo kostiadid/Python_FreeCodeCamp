@@ -2,21 +2,19 @@ class Employee:
     def __init__(self, name, level):
         self._name = name
         self._level = level
-    @property    
+
+    def __str__(self):
+        return f'{self.name}: {self.level}'
+
+    @property
     def name(self):
         return self._name
-    def __str__(self):
-        return f'{self._name}: {self._level}'
 
-    
+    @property
+    def level(self):
+        return self._level
 
 charlie_brown = Employee('Charlie Brown', 'trainee')
 print(charlie_brown)
-
-
-
-#Ключевая разница 
-print(emp.name)	            print(emp)
-Печатает одно свойство	    Печатает представление объекта
-Использует @property	    Использует __str__
-
+print(charlie_brown.name)
+print(charlie_brown.level)
