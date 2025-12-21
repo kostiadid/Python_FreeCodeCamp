@@ -29,6 +29,27 @@ class GameCharacter:
     
     @mana.setter
     def mana(self,new_mana):
-        if not new_mana >= 0  or new_mana <=50:
-            return "Limit error"
+        if new_mana < 0:
+            new_mana = 0
+        if new_mana > 50:
+            new_mana = 50
+        self._mana = new_mana
     
+    @property
+    def level(self):
+        return self._level
+
+    def level_up(self):
+        self._level+=1
+        self.health = 100
+        self.mana = 50
+        print(f"{self._name} leveled up to {self._level}!")
+
+    def __str__(self):
+
+         return (
+            f"Name: {self._name}\n"
+            f"Level: {self._level}\n"
+            f"Health: {self._health}\n"
+            f"Mana: {self._mana}"
+        )
