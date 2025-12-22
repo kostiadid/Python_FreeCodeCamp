@@ -3,10 +3,29 @@ class Rectangle:
         self._width = width
         self._height = height
 
-    def set_width:
-        
+    def set_width(self,new_width):
+        self._width = new_width
+    def set_height(self,new_height):
+        self._height = new_height
+    def get_area(self):
+        return self._width * self._height
+    def get_perimeter(self):
+        return  2 *(self._width + self._height)
+    def get_diagonal(self):
+        return   (self._width**2 + self._height**2) ** 0.5
+    def get_picture(self):
+        if self._width > 50 or self._height > 50:
+            return "Too big for picture."
+    def get_amount_inside(self, other):
+        fits_width = self._width
+        fits_height = self._height
+        return fits_width * fits_height
+
+
 
 class Square(Rectangle):
+     def __init__(self, side):
+        super().__init__(side, side)
 
 
 
