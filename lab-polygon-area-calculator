@@ -16,6 +16,11 @@ class Rectangle:
     def get_picture(self):
         if self._width > 50 or self._height > 50:
             return "Too big for picture."
+
+        picture = ""
+        for _ in range(self._height):
+            picture += "*" * self._width + "\n"
+        return picture
     def get_amount_inside(self, other):
         fits_width = self._width // other._width
         fits_height = self._height // other._height
@@ -43,7 +48,3 @@ class Square(Rectangle):
      def set_height(self, height):
         self._width = height
         self._height = height
-
-
-
-
