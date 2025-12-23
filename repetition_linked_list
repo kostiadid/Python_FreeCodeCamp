@@ -11,3 +11,5 @@ class LinkedList:
     def is_empty(self):
         return self.length == 0
 
+my_list = LinkedList()
+print(my_list.is_empty())
