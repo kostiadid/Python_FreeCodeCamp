@@ -10,19 +10,15 @@ class HashTable:
         h = self.hash(key)
         if h not in self.collection:
             self.collection[h] = {}
-        for i , (k,v) in enumerate(self.collection[h]): 
-            if k == key:
-                self.collection[h][i]=(key,value)
-                return
-        self.collection[h].append((key,value))
+        self.collection[h][key] = value
 
     def remove(self,key):
         h = self.hash(key)
         if h in self.collection:
-            for i, (k,v) in enumerate(self.collection[h]):
-                if key == k:
-                    del self.collection[h][i]
-                    if not self.collection[h]: 
-                        del self.collection[h]
-    def lookup(self,el):
-        pass
+            del self.collection[h][key]
+                   
+    def lookup(self,key):
+        h = self.hash(key)
+        if not  h in self.collection:
+            return None
+        return  self.collection[h][key]
