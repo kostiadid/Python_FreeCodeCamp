@@ -1,15 +1,28 @@
 class HashTable:
-    collection = {}
+    def __init__(self):
+        self.collection = {}
     def hash(self, el):
         summury = 0
         for i in el:
             summury += ord(i)
         return summury
     def add(self,key,value):
-        pass
-    def remove(self,el):
-        if el in self.collection:
-            del self.collection[el]
-        else: pass
+        h = self.hash(key)
+        if h not in self.collection:
+            self.collection[h] = {}
+        for i , (k,v) in enumerate(self.collection[h]): 
+            if k == key:
+                self.collection[h][i]=(key,value)
+                return
+        self.collection[h].append((key,value))
+
+    def remove(self,key):
+        h = self.hash(key)
+        if h in self.collection:
+            for i, (k,v) in enumerate(self.collection[h]):
+                if key == k:
+                    del self.collection[h][i]
+                    if not self.collection[h]: 
+                        del self.collection[h]
     def lookup(self,el):
         pass
