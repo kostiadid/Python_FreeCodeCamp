@@ -1,0 +1,15 @@
+class HashTable:
+    collection = {}
+    def hash(self, el):
+        summury = 0
+        for i in el:
+            summury += ord(i)
+        return summury
+    def add(self,key,value):
+        pass
+    def remove(self,el):
+        if el in self.collection:
+            del self.collection[el]
+        else: pass
+    def lookup(self,el):
+        pass
