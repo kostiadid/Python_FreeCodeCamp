@@ -5,12 +5,15 @@ def hanoi_solver(n):
 
     lines = []
     lines.append(f"{source} {middle} {end}")
-
+    #Start column -> Central
+    # Start  to  Target
+    #Central to target 
     def move(k, src, central,  target):
         if k == 0:
             return
         #from scr to central
         move(k-1, src,  target, central)
+        # scr  to  Target
         target.append(src.pop())
         lines.append(f"{source} {middle} {end}")
         #  from central to   target   
