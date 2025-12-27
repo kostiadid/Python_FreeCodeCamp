@@ -14,3 +14,7 @@ def shortest_path(matrix, start_node, target_node=None):
     distances[start_node] = 0
     paths = [[node_no] for node_no in range(n)]
     visited = [False] * n
+
+    for _ in range(n):  
+        min_distance = INF  
+        current = -1
