@@ -5,9 +5,9 @@ def fibonacci(n):
     prev1 = 0
     prev2 = 1
     if n == 0:
-        return prev1
+        return 0
     if n == 1:
-        return prev2
+        return 1
     for i in range(n - 1):
         current = prev1 + prev2
         prev1 = prev2
